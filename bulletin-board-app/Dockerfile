@@ -1,4 +1,8 @@
-FROM node:current-slim
+FROM ubuntu:latest
+
+RUN apt-get update --fix-missing
+RUN apt-get -y install nodejs
+RUN apt-get -y install npm
 
 WORKDIR /usr/src/app
 COPY package.json .
